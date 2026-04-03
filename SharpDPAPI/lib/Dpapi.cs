@@ -1895,7 +1895,7 @@ namespace SharpDPAPI
             var suppKeyLen = BitConverter.ToInt32(domainKeyBytesDec, 4);
 
             var masterKey = new byte[masterKeyLen];
-            Buffer.BlockCopy(domainKeyBytesDec, 8, masterKey, 0, masterKeyLen);
+            Buffer.BlockCopy(domainKeyBytesDec, 16, masterKey, 0, masterKeyLen);
 
             var sha1 = new SHA1Managed();
             var masterKeySha1 = sha1.ComputeHash(masterKey);
